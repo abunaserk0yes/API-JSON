@@ -11,9 +11,9 @@
     <h1>JSON</h1>
     <p>Json Data Upload Simple System</p>
     <input id="title" type="text" placeholder="Enter your title">
-    <br>
+    <br/>
     <input id="product" type="text" placeholder="Enter your Product">
-    <br>
+    <br/>
     <button id="submit">Submit</button>
     <script>
         const submitBtn=document.getElementById('submit').addEventListener('click',function(){
@@ -33,7 +33,8 @@
                 },
             })
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => console.log(data))
+            .catch((error)=>alert("please Try again"))
         }
     </script>
 </body>

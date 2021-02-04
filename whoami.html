@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Am I</title>
+</head>
+
+<body>
+    <h1 id="user-heading">I love You Programing</h1>
+    <script>
+        function getItem() {
+            fetch('https://randomuser.me/api/')
+                .then(response => response.json())
+                .then(data => {
+                    const user = data.results[0]
+                    const Name = user.name
+                    const userName = `${Name.title} ${Name.first} ${Name.last}`
+                    document.getElementById('user-heading').innerText = userName;
+                })
+        }
+        getItem();
+        setInterval(() => {
+            getItem();
+        }, 1000);
+    </script>
+</body>
+
+</html>
